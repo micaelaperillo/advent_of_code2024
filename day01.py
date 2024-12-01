@@ -19,10 +19,11 @@ def part01():
     left.sort()
     right.sort()
 
-    difs = []
+    difs = 0
     for i in range(len(left)):
-        difs.append(abs(right[i] - left[i]))
-    return sum(difs)
+        difs += abs(right[i] - left[i])
+    
+    return difs
 
 def part02():
     left, right = load_data()
@@ -40,3 +41,5 @@ def part02():
         similarity_score += left[i] * left_dict[left[i]]
 
     return similarity_score
+
+print(part02())
