@@ -6,7 +6,7 @@ def load_data():
         data = f.readlines()
         return ''.join(data)
     
-def day01():
+def part01():
     data = load_data()
     
     regex_pattern = r'mul\([0-9]{1,3},[0-9]{1,3}\)'
@@ -18,7 +18,7 @@ def day01():
         result += int(numbers[0]) * int(numbers[1])
     return result
 
-def day02():
+def part02():
     data = load_data()
 
     regex_pattern = r"mul\([0-9]{1,3},[0-9]{1,3}\)|do\(\)|don't\(\)"
@@ -38,5 +38,3 @@ def day02():
             numbers = re.findall(r'[0-9]{1,3}', match)
             result += int(numbers[0]) * int(numbers[1])
     return result
-
-print(day02())
